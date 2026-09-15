@@ -1,0 +1,15 @@
+{
+  "name": "Jimmy Legaliti",
+  "short_name": "Jimmy",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffd166",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
