@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy Legaliti - Asistente & Ojo Artificial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <main class="container">
+        <div class="logo-container">
+            <img src="1000103317.png" alt="Jimmy Legaliti Logo" class="app-logo">
+        </div>
+
+        <h1>Jimmy Legaliti</h1>
+        <p class="subtitle">Asistente Legal & Ojo Artificial para Conducir</p>
+        
+        <!-- Botón principal para activar el Ojo Artificial / Conducción -->
+        <div class="button-group">
+            <button id="toggleDriveBtn" class="btn" style="background-color: #7209b7; color: white; grid-column: span 2;">🚗 Activar Ojo Artificial (Conducción)</button>
+        </div>
+     
+        <!-- Sección Legal Principal -->
+        <div id="legalSection">
+            <div class="pdf-upload-box">
+                <label for="pdfInput" class="btn file-btn">📁 Subir Archivo PDF</label>
+                <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+            </div>
+
+            <textarea id="textInput" placeholder="O escribe/pega el texto aquí..."></textarea>
+
+            <div class="button-group">
+                <button id="speakBtn" class="btn primary">🔊 Leer en Voz Alta</button>
+                <button id="stopBtn" class="btn danger">⏹️ Detener</button>
+                <button id="micBtn" class="btn secondary">🎙️ Dictar por Voz</button>
+                <button id="clearBtn" class="btn warning">🗑️ Borrar</button>
+            </div>
+        </div>
+
+        <!-- Sección de Conducción / Ojo Artificial Adaptado -->
+        <div id="driveSection" style="display: none;">
+            <div class="drive-container">
+                <h2>Modo Ojo Artificial Activo</h2>
+                <p class="drive-instruction">Ajustes visuales para distancia, luz y noche.</p>
+                
+                <video id="cameraStream" autoplay playsinline></video>
+
+                <!-- Controles visuales especiales para la vista de tu amigo -->
+                <div class="button-group">
+                    <button id="zoomInBtn" class="btn secondary">🔍 Acercar (+)</button>
+                    <button id="zoomOutBtn" class="btn secondary">🔍 Alejar (-)</button>
+                    <button id="contrastBtn" class="btn warning">👁️ Alto Contraste</button>
+                    <button id="antiglareBtn" class="btn warning">🕶️ Anti-reflejo</button>
+                    <button id="torchBtn" class="btn primary" style="grid-column: span 2;">🔦 Linterna / Visión Nocturna</button>
+                    <button id="driveVoiceBtn" class="btn secondary" style="grid-column: span 2;">🎙️ Comando de Voz</button>
+                    <button id="backToLegalBtn" class="btn danger" style="grid-column: span 2;">⬅️ Volver a Legal</button>
+                </div>
+            </div>
+        </div>
+        
+        <p id="status" class="status-text"></p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
